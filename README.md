@@ -20,10 +20,22 @@ CoreIoT ── RPC (v1/devices/me/rpc/request/+) ──▶ Berry ──▶ bật
 | `berry/autoexec.be` | Script chạy trên mạch: đọc cảm biến, cảnh báo pH, gửi CoreIoT, nhận RPC relay |
 | `tasmota/template.json` | Template GPIO cho Waveshare ESP32-S3-Relay-6CH |
 | `coreiot/dashboard-thung-quan-trac.json` | Dashboard CoreIoT (xuất JSON, nền tối, đồng hồ neon) |
+| `media/` | Ảnh tủ thiết bị, hộp điều khiển và 2 video (đầu nối cảm biến, dashboard CoreIoT chạy thật) |
 | `docs/setup.md` | Cài lại từ đầu: nạp Tasmota, WiFi, template, MQTT CoreIoT, upload Berry |
 | `docs/sensors.md` | Cảm biến và bảng thanh ghi Modbus |
 | `docs/coreiot.md` | Thông số CoreIoT, key telemetry, RPC, dashboard |
 | `docs/boot-log-2026-11-22.txt` | Log khởi động mẫu của hệ thống đang chạy |
+
+## Hình ảnh và video
+Tủ thiết bị: hộp điều khiển Waveshare ESP32-S3-Relay-6CH ở trên, bình lọc và khay acrylic gắn 3 đầu dò (pH, DO, EC) ở dưới.
+
+| | |
+|---|---|
+| ![Hộp điều khiển, mở nắp](media/hop-dieu-khien-mo-1.jpg) | ![Hộp điều khiển, mở nắp, góc khác](media/hop-dieu-khien-mo-2.jpg) |
+| ![Tủ thiết bị, hộp đã đóng](media/tu-thiet-bi-hop-dong.jpg) | |
+
+- [Video đầu nối cảm biến](media/video-cap-dau-noi-cam-bien.mp4) (43 giây)
+- [Video dashboard CoreIoT chạy thật](media/video-dashboard-coreiot.mp4) (48 giây)
 
 ## Script `berry/autoexec.be` làm gì
 - Mỗi 10 giây gửi lần lượt 6 lệnh `ModbusSend` (cách nhau 1.2 giây, vì RS485 chỉ hỏi được một thiết bị mỗi lúc), nhận kết quả qua rule `ModbusReceived`, ghép 2 thanh ghi thành float 32-bit theo thứ tự CDAB.
