@@ -50,16 +50,23 @@ CoreIoT gửi `v1/devices/me/rpc/request/<id>`, mạch trả lời ở `v1/devic
 Params của widget có thể là `true/false`, `1/0`, `"on"/"off"` hoặc `{"state":…}`. Widget Switch Control: Set value method `setRelayN`, Get value method `getRelayN`, timeout 5000 ms.
 
 ## Dashboard "Thung Quan Trac"
-Đã tạo trên tài khoản CoreIoT gồm 6 công tắc relay, 8 ô giá trị (Value card) và 4 biểu đồ (Time series chart). Dashboard này dựng theo bộ key cũ (`tds`, `turbidity/chlorine`, `temp_x16`, `rssi`) nên cần đổi sang bộ key hiện tại:
+File xuất: [`coreiot/dashboard-thung-quan-trac.json`](../coreiot/dashboard-thung-quan-trac.json). Giao diện nền tối, bố cục 24 cột:
 
-| Key cũ trong dashboard | Thay bằng |
-|---|---|
-| `turbidity/chlorine` | `do` (mg/L) |
-| `temp_x16` | `temp_do` |
-| `tds`, `rssi` | bỏ (script hiện tại không gửi) |
-| (chưa có) | thêm `temp` và `status` |
+| Khu vực | Widget | Key |
+|---|---|---|
+| Banner trên cùng | thẻ giá trị, chữ đỏ khi có "CẢNH BÁO" | `status` |
+| 3 đồng hồ neon | pH (thang 4–10), DO (0–12 mg/L), nhiệt độ nước (15–40 °C) | `ph`, `do`, `temp` |
+| 4 thẻ nhỏ | EC, nhiệt độ cảm biến pH / EC / DO | `ec`, `temp_ph`, `temp_ec`, `temp_do` |
+| 6 công tắc | Relay 1–6 (Switch Control, `setRelayN`/`getRelayN`) | RPC |
+| 4 biểu đồ | pH, DO, EC, nhiệt độ (4 đường) | |
 
-Sao lưu: Export dashboard (biểu tượng tải xuống ở thanh trên). Khôi phục: Dashboards → + → Import dashboard.
+Nhập lại dashboard: Dashboards → + → **Import dashboard** → chọn file JSON. Sau khi nhập, vào **Entity aliases** và trỏ alias `THUNGQUANTRAC` tới thiết bị của bạn (file đang trỏ tới ID thiết bị của hệ thống gốc, không dùng được trên tài khoản khác).
+
+Lưu ý hiển thị:
+- Đơn vị của đồng hồ DO và nhiệt độ nằm trong tiêu đề, vì phông 7 đoạn của đồng hồ neon vẽ chữ "mg/L" bị méo.
+- Dải màu theo ngưỡng đã khai báo trong cấu hình đồng hồ, nhưng chưa thấy hiện trên cung đồng hồ; chỉ màu chữ banner trạng thái đổi được.
+
+Cập nhật file: sửa dashboard trên CoreIoT, bấm biểu tượng tải xuống ở thanh trên để Export, rồi chép đè file JSON.
 
 ## Bảo mật
 Access token từng lộ trong khung chat. Đổi token ở **Manage credentials** rồi cập nhật `MqttUser` trên mạch. Không commit token vào repo.

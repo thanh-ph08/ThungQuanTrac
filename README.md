@@ -19,6 +19,7 @@ CoreIoT ── RPC (v1/devices/me/rpc/request/+) ──▶ Berry ──▶ bật
 |---|---|
 | `berry/autoexec.be` | Script chạy trên mạch: đọc cảm biến, cảnh báo pH, gửi CoreIoT, nhận RPC relay |
 | `tasmota/template.json` | Template GPIO cho Waveshare ESP32-S3-Relay-6CH |
+| `coreiot/dashboard-thung-quan-trac.json` | Dashboard CoreIoT (xuất JSON, nền tối, đồng hồ neon) |
 | `docs/setup.md` | Cài lại từ đầu: nạp Tasmota, WiFi, template, MQTT CoreIoT, upload Berry |
 | `docs/sensors.md` | Cảm biến và bảng thanh ghi Modbus |
 | `docs/coreiot.md` | Thông số CoreIoT, key telemetry, RPC, dashboard |
@@ -38,6 +39,6 @@ CoreIoT ── RPC (v1/devices/me/rpc/request/+) ──▶ Berry ──▶ bật
 - Không đưa access token, mật khẩu WiFi hay mật khẩu web Tasmota vào repo. Dùng chỗ giữ chỗ như `<ACCESS_TOKEN>`.
 
 ## Việc còn lại
-- [ ] Cập nhật dashboard CoreIoT theo bộ key mới (`do`, `temp_do`, `temp`, `status`).
+- [ ] Dải màu theo ngưỡng trên đồng hồ neon của dashboard chưa hiển thị.
 - [ ] Xác nhận đơn vị EC và hiệu chuẩn DO (0.02 mg/L khi chưa nhúng nước).
 - [ ] Đổi access token CoreIoT đã từng lộ.
