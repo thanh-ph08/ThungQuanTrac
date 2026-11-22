@@ -1,0 +1,29 @@
+# Log khởi động mẫu của hệ thống đang chạy (kiểu ModbusBridge), 22/11/2026. Rút gọn.
+00:00:00.343 === HỆ THỐNG GIÁM SÁT AO TÔM ĐÃ SẴN SÀNG (pH ID 2 | DO ID 16 | EC ID 4 + COREIOT) ===
+00:00:00.344 BRY: Successfully loaded 'autoexec.be'
+00:00:01.555 WIF: Connecting to AP1 RD-SEAI_2.4G Channel 1 BSSId 14:1F:BA:74:D6:E8 (LastUsed) in mode HT20 as tasmota-EC6C70-3184...
+00:00:02.888 WIF: Connected
+11:51:25.090 HTP: Web server active on tasmota-EC6C70-3184 with IP address 172.28.182.63
+11:51:26.147 MQT: Attempting connection...
+11:51:26.857 MQT: Connected
+11:51:26.865 MQT: tele/tasmota_EC6C70/LWT = Online (retained)
+11:51:26.868 MQT: cmnd/tasmota_EC6C70/POWER =
+11:51:26.877 MQT: tele/tasmota_EC6C70/INFO1 = {"Info1":{"Module":"ESP32S3","Version":"16.0.0.3(ccab572-tasmota32)","FallbackTopic":"cmnd/DVES_EC6C70_fb/","GroupTopic":"cmnd/tasmotas/"}}
+11:51:26.909 MQT: tele/tasmota_EC6C70/INFO3 = {"Info3":{"RestartReason":"Usb uart reset digital core","BootCount":9}}
+11:51:26.923 MQT: stat/tasmota_EC6C70/RESULT = {"POWER1":"ON"}
+11:51:26.932 MQT: stat/tasmota_EC6C70/RESULT = {"POWER2":"OFF"}
+11:51:29.135 MQT: v1/devices/me/telemetry = {"relay1":true,"relay2":false,"relay3":false,"relay4":false,"relay5":false,"relay6":false}
+11:51:30.109 MQT: stat/tasmota_EC6C70/RESULT = {"ModbusSend":"Done"}
+11:51:30.165 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":2,"FunctionCode":3,"StartAddress":1,"Length":9,"Count":2,"Values":[585,16574]}}
+11:51:31.509 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":2,"FunctionCode":3,"StartAddress":3,"Length":9,"Count":2,"Values":[1494,16863]}}
+11:51:33.043 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":16,"FunctionCode":3,"StartAddress":1,"Length":9,"Count":2,"Values":[36817,15538]}}
+11:51:33.807 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":16,"FunctionCode":3,"StartAddress":3,"Length":9,"Count":2,"Values":[13872,16850]}}
+11:51:34.980 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":4,"FunctionCode":3,"StartAddress":0,"Length":9,"Count":2,"Values":[0,0]}}
+11:51:36.207 MQT: tele/tasmota_EC6C70/RESULT = {"ModbusReceived":{"DeviceAddress":4,"FunctionCode":3,"StartAddress":4,"Length":9,"Count":2,"Values":[42543,16863]}}
+11:51:31.003 MQT: tele/tasmota_EC6C70/SENSOR = {"Time":"2026-11-22T11:51:30","PondWater":{"pH":5.94,"DO":0.00,"EC":0.0,"Temp":0.0,"Temp_pH":0.0,"Temp_DO":0.0,"Temp_EC":0.0,"Status":"Đang khởi tạo..."}}
+11:51:37.785 MQT: stat/tasmota_EC6C70/RESULT = {"Command":"Unknown","Input":"COLOR FF0000"}
+11:51:37.805 MQT: stat/tasmota_EC6C70/RESULT = {"Command":"Unknown","Input":"BUZZER 2"}
+11:51:37.822 SENSORS: pH 5.94 (27.9°C) | DO 0.02 mg/L (26.3°C) | EC 0.0 uS/cm (28.0°C)
+11:51:37.823 COREIOT SENSOR: {"ph":5.94,"temp_ph":27.9,"do":0.02,"temp_do":26.3,"ec":0.0,"temp_ec":28.0,"temp":27.4,"status":"CẢNH BÁO: pH THẤP (5.94)"}
+11:51:37.827 MQT: v1/devices/me/telemetry = {"ph":5.94,"temp_ph":27.9,"do":0.02,"temp_do":26.3,"ec":0.0,"temp_ec":28.0,"temp":27.4,"status":"CẢNH BÁO: pH THẤP (5.94)"}
+11:51:47.957 MQT: v1/devices/me/telemetry = {"ph":5.94,"temp_ph":27.9,"do":0.02,"temp_do":26.3,"ec":0.0,"temp_ec":27.9,"temp":27.4,"status":"CẢNH BÁO: pH THẤP (5.94)"}

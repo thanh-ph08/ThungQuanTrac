@@ -1,0 +1,4 @@
+# không commit bí mật
+*.token
+secrets*
+.env
